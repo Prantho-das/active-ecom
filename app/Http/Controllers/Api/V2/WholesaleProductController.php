@@ -13,7 +13,7 @@ class WholesaleProductController extends Controller
 {
     public function all_wholesale_products(Request $request)
     {
-        CoreComponentRepository::instantiateShopRepository();
+        // CoreComponentRepository::instantiateShopRepository();
 
         $products = Product::where('wholesale_product', 1)->orderBy('created_at', 'desc');
 

@@ -16,7 +16,7 @@ use App\Models\Wishlist;
 use App\Models\User;
 use App\Notifications\ShopProductNotification;
 use Carbon\Carbon;
-use CoreComponentRepository;
+use  CoreComponentRepository;
 use Artisan;
 use Cache;
 use App\Services\ProductService;
@@ -66,7 +66,7 @@ class ProductController extends Controller
      */
     public function admin_products(Request $request)
     {
-        CoreComponentRepository::instantiateShopRepository();
+        // CoreComponentRepository::instantiateShopRepository();
 
         $type = 'In House';
         $col_name = null;
@@ -178,7 +178,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        CoreComponentRepository::initializeCache();
+        // CoreComponentRepository::initializeCache();
 
         $categories = Category::where('parent_id', 0)
             ->where('digital', 0)
@@ -272,7 +272,7 @@ class ProductController extends Controller
      */
     public function admin_product_edit(Request $request, $id)
     {
-        CoreComponentRepository::initializeCache();
+        // CoreComponentRepository::initializeCache();
 
         $product = Product::findOrFail($id);
         if ($product->digital == 1) {
